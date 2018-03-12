@@ -16,9 +16,23 @@ alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200000
 # verifies alternatives installations
 alternatives --list
 
-# open file
+### open file
 vi /etc/rc.local
 
-# write this line
+### write this line
 export JAVA_HOME="/usr/java/latest"
 
+### to exit vi
+esc key then :wq enter
+
+### download
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+### Add the Jenkins repo to your yum sources on the CentOS node
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+### Import the Jenkins rpm signing key
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+### Install jenkins
+yum install -y jenkins-2.19.4-1.1
