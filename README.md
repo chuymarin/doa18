@@ -13,3 +13,12 @@ alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200000
 
 alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200000
 
+# verifies alternatives installations
+alternatives --list
+
+# open file
+vi /etc/rc.local
+
+# write this line
+export JAVA_HOME="/usr/java/latest"
+
